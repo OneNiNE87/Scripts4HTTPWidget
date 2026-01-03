@@ -1,11 +1,13 @@
-https://mboum.com/api/v1/qu/quote/?symbol=AAPL,F&apikey=demo
-
+# url:s
+```
 https://api.coingecko.com/api/v3/simple/price?ids=usd-coin&vs_currencies=inr
-
-# example 
 ``` 
+
+``` javascript
+function extract(responseString) {
 let json = JSON.parse(responseString);
 let inrPrice = json["usd-coin"].inr;
 let inrPriceKeepTwoDigits = inrPrice.toFixed(2);
 return `$${inrPriceKeepTwoDigits}`;
+}
 ``` 
